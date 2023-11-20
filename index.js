@@ -7,6 +7,7 @@ const io = require('socket.io')(http, {
         methos: ["GET", "POST"]
     }
 });
+const PORT = process.env.PORT || 3000;
 
 io.on('connection', (socket) => {
 
@@ -20,10 +21,6 @@ io.on('connection', (socket) => {
         socket.broadcast.emit('recivedmessage', message);
     });
 
-
-
-
-
     socket.on('disconnect', () => {
         console.log('user disconnected', socket.id);
     });
@@ -36,5 +33,5 @@ app.get('/', (req, res) => {
 });
 
 http.listen(3000, () => {
-    console.log('server Listening on port 3000');
+    console.log(`server Listening on port ${PORT}`);
 });

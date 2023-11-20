@@ -7,7 +7,7 @@ const io = require('socket.io')(http, {
         methos: ["GET", "POST"]
     }
 });
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5000;
 
 io.on('connection', (socket) => {
 
@@ -29,9 +29,9 @@ io.on('connection', (socket) => {
 
 
 app.get('/', (req, res) => {
-    res.send({ "message": 'Welcome to server side from HomeHeal Socket.io' });
+    res.send("<h1>Bienvenido a el servidor de socket de HomeHeal</h1>");
 });
 
-http.listen(3000, () => {
+http.listen(PORT, () => {
     console.log(`server Listening on port ${PORT}`);
 });

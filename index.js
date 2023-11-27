@@ -35,13 +35,14 @@ function conectarBaseDeDatos() {
 }
 conectarBaseDeDatos();
 
-
-updateVitalSigns = async (data) => {
+createOrupdateVitalSigns = async (data) => {
+    const {id} = data;
     try {
         const {hearth_rate, blood_pressure, O2_saturation, patient_id} = data;
         const pool = await sql.connect(databaseConfig);
         if(pool.connected) {
-            console.log('A ACTUALIZAR', data)
+           if(id != 0){
+            console.log("update",data);
             await pool.query
             (   `UPDATE vital_signs 
                  SET hearth_rate = ${hearth_rate}, 
@@ -49,6 +50,14 @@ updateVitalSigns = async (data) => {
                  O2_saturation = ${O2_saturation} 
                  WHERE patient_id = ${patient_id}`
             );
+           }else{
+            console.log("insert",data);
+            await pool.query
+            (   `INSERT INTO vital_signs (hearth_rate, blood_pressure, O2_saturation, patient_id)
+                 VALUES (${hearth_rate}, ${blood_pressure}, ${O2_saturation}, ${patient_id})`
+            );
+           }
+            
             const result = await pool.query
             (   `SELECT TOP 1 *
                  FROM vital_sign_records VSR
@@ -72,7 +81,7 @@ io.on('connection', (socket) => {
     });
 
     socket.on('update vital Signs', async (data) => {
-        result = await updateVitalSigns(data);
+        result = await createOrupdateVitalSigns(data);
         io.emit('update vital Signs', result);
     });
 

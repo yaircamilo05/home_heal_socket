@@ -7,10 +7,10 @@ Bienvenido al repositorio del Socket de la Plataforma Home-Heal. Este componente
 Para el completo funcionamiento de este socket, también son necesarios los siguientes proyectos:
 
 1. **Frontend Home-Heal:**
-   Asegúrate de tener el Frontend de Home-Heal correctamente configurado y desplegado. Puedes encontrar el repositorio [aquí](https://github.com/tu-usuario/frontend-home-heal).
+   Asegúrate de tener el Frontend de Home-Heal correctamente configurado y desplegado. Puedes encontrar el repositorio [aquí](https://github.com/yaircamilo05/home_heal_frontend).
 
 2. **Backend Home-Heal:**
-   El Backend de Home-Heal es esencial para la lógica de negocio y la gestión de datos. Asegúrate de tenerlo instalado y funcionando correctamente. Puedes encontrar el repositorio [aquí](https://github.com/tu-usuario/backend-home-heal).
+   El Backend de Home-Heal es esencial para la lógica de negocio y la gestión de datos. Asegúrate de tenerlo instalado y funcionando correctamente. Puedes encontrar el repositorio [aquí](https://github.com/yaircamilo05/home_heal_backend).
 
 ## Configuración del Socket
 

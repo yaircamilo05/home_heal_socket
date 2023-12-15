@@ -28,7 +28,8 @@ Asegúrate de seguir estos pasos para la correcta configuración del socket:
     npm install
     ```
 
-3. Configura las variables de entorno según tus necesidades en el archivo `.env`.
+3. Para conseguir las variables de entorno necesarias para los proyectos puedes seguir a el siguiente link
+[aquí](https://unmarred-sunfish-d33.notion.site/Variables-de-entorno-de-home-heal-f34f260e4eb649ab86fb07332ab74b2a).
 
 4. Inicia el socket.
 
